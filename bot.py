@@ -7,6 +7,8 @@ from get_weather import get_data
 API_BOT = open('api_bot', 'r').read()
 bot = telebot.TeleBot(API_BOT)
 
+#commit for check
+
 @bot.message_handler(commands=['start', '/help'])
 def welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
