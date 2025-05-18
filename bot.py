@@ -7,8 +7,6 @@ from get_weather import get_data
 API_BOT = open('api_bot', 'r').read()
 bot = telebot.TeleBot(API_BOT)
 
-#commit for check
-
 @bot.message_handler(commands=['start', '/help'])
 def welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -19,6 +17,7 @@ def welcome(message):
     bot.send_message(message.chat.id , "Привет! Я бот, который поможет тебе узнать текущую температуру.", reply_markup=markup)
     time.sleep(1)
     bot.send_message(message.chat.id, "Выбери дальнешее действие:" )
+    bot.send_message(message.chat.id, "Проверка:" )
 
 def save_city(message):
     city = message.text
